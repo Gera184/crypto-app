@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import "./App.css";
+import { useDispatch, useSelector } from "react-redux";
+import Navbar from "./components/navbar/Navbar";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { routes } from "./routes.js";
+import { sendCoinData } from "./redux/actions/coinActions";
+import { sendglobalData } from "./redux/actions/globalActions";
 
-function App() {
+export default () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(sendCoinData);
+    dispatch(sendglobalData);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="background">
+      <Router>
+        <Navbar />
+        <Routes>
+          {routes.map((route, index) => {
+            return (
+              <Route
+                key={route.path}
+                exact
+                element={route.element}
+                path={route.path}
+              />
+            );
+          })}
+        </Routes>
+      </Router>
     </div>
   );
-}
-
-export default App;
+};

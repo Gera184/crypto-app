@@ -1,0 +1,36 @@
+.table-image {
+  width: 30px;
+  height: 30px;
+}
+.coins-table {
+  max-height: 700px;
+  overflow-y: scroll;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid whitesmoke;
+}
+
+.yellow {
+  color: yellow;
+}
+.green {
+  color: green;
+}
+.red {
+  color: rgb(255, 0, 0);
+}
+
+.search-input {
+  border-radius: 50px;
+  text-align: center;
+}
+
+.coin-name {
+  color: whitesmoke;
+}
+.coin-name:hover {
+  color: wheat;
+}
+
+a:hover {
+  text-decoration: none;
+}

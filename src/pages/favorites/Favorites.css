@@ -1,0 +1,10 @@
+.favorite-img {
+  width: 150px;
+  height: 150px;
+}
+
+.none-favorites {
+  color: black;
+  background-color: wheat;
+  font-size: large;
+}

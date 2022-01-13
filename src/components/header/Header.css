@@ -1,0 +1,15 @@
+.jumbotron {
+  opacity: 0.8;
+}
+.title {
+  font-size: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: 40px;
+  }
+  .global {
+    font-size: 20px;
+  }
+}
