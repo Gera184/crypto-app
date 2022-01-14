@@ -89,10 +89,13 @@ const CoinPage = () => {
             </div>
             <div className="col-md-6">
               <span className="text">
-                Circulating Supply: $
-                {coin.market_data.circulating_supply
-                  .toString()
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                Total Supply:
+                {""}{" "}
+                {coin.market_data.total_supply === null
+                  ? " ?"
+                  : coin.market_data.total_supply
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
               </span>
             </div>
           </div>
